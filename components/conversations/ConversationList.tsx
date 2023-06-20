@@ -15,6 +15,7 @@ import useConversation from "@/hooks/useConversation";
 
 import { FullConversationType } from "@/types";
 import ConversationBox from "./ConversationBox";
+import GroupChatModal from "../modals/GroupChatModal";
 
 interface ConversationListProps {
   initialItems: FullConversationType[];
@@ -34,9 +35,9 @@ const ConversationList: React.FC<ConversationListProps> = ({
 
   const { conversationId, isOpen } = useConversation();
 
-//   const pusherKey = useMemo(() => {
-//     return session.data?.user?.email;
-//   }, [session.data?.user?.email]);
+  //   const pusherKey = useMemo(() => {
+  //     return session.data?.user?.email;
+  //   }, [session.data?.user?.email]);
 
   //   useEffect(() => {
   //     if (!pusherKey) {
@@ -83,11 +84,11 @@ const ConversationList: React.FC<ConversationListProps> = ({
 
   return (
     <>
-      {/* <GroupChatModal
+      <GroupChatModal
         users={users}
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-      /> */}
+      />
       <aside
         className={clsx(
           `
