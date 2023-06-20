@@ -11,8 +11,7 @@ import useActiveList from "@/hooks/useActiveList";
 
 import Avatar from "@/components/Avatar";
 import AvatarGroup from "@/components/AvatarGroup";
-
-// import ProfileDrawer from "./ProfileDrawer";
+import ProfileDrawer from "./ProfileDrawer";
 
 interface HeaderProps {
   conversation: Conversation & {
@@ -26,7 +25,7 @@ const Header: React.FC<HeaderProps> = ({ conversation }) => {
 
   const { members } = useActiveList();
   const isActive = members.indexOf(otherUser?.email!) !== -1;
-  
+
   const statusText = useMemo(() => {
     if (conversation.isGroup) {
       return `${conversation.users.length} members`;
@@ -37,26 +36,12 @@ const Header: React.FC<HeaderProps> = ({ conversation }) => {
 
   return (
     <>
-      {/* <ProfileDrawer
+      <ProfileDrawer
         data={conversation}
         isOpen={drawerOpen}
         onClose={() => setDrawerOpen(false)}
-      /> */}
-      <div
-        className="
-        bg-white 
-        w-full 
-        flex 
-        border-b-[1px] 
-        sm:px-4 
-        py-3 
-        px-4 
-        lg:px-6 
-        justify-between 
-        items-center 
-        shadow-sm
-      "
-      >
+      />
+      <div className="bg-white w-full flex  border-b-[1px]  sm:px-4  py-3 px-4 lg:px-6 justify-between items-center  shadow-sm">
         <div className="flex items-center gap-3">
           <Link
             href="/conversations"
