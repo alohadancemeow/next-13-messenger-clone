@@ -27,7 +27,7 @@ const MessageBox: React.FC<MessageBoxProps> = ({ data, isLast }) => {
     .map((user) => user.name)
     .join(", ");
 
-  console.log("seen", seenList);
+  // console.log("seen", seenList);
 
   const container = clsx("flex gap-3 p-4", isOwn && "justify-end");
   const avatar = clsx(isOwn && "order-2");

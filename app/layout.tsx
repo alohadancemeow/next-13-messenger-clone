@@ -2,6 +2,7 @@ import AuthContext from "@/providers/AuthProvider";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import ToasterContext from "@/providers/ToasterPrvider";
+import ActiveStatus from "@/components/ActiveStatus";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body className={inter.className} suppressHydrationWarning={true}>
         <AuthContext>
           <ToasterContext />
+          <ActiveStatus />
           {children}
         </AuthContext>
       </body>
